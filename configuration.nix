@@ -107,6 +107,39 @@
 	users.users."jex".openssh.authorizedKeys.keyFiles = [
 	    /home/jex/.ssh/authorized_keys
 	  ];
+    # git
+    programs.git = {
+    enable = true;
+
+    userName = "Magnus Rotvit Perlt Hansen";
+    userEmail = "magnuha@gmail.com";
+
+    extraConfig = {
+      init.defaultBranch = "main";
+      merge.conflictstyle = "diff3";
+      diff.colorMoved = "default";
+      pull.ff = "only";
+      color.ui = true;
+      url = {
+        "git@github.com:".insteadOf = [
+          "gh:"
+          "https://github.com/"
+        ];
+        "git@github.com:ogjex/".insteadOf = "fp:";
+      };
+      core.excludesFile = "/home/${username}/.config/git/.gitignore";
+    };
+
+    delta = {
+      enable = true;
+      options = {
+        line-numbers = true;
+        side-by-side = false;
+        diff-so-fancy = true;
+        navigate = true;
+      };
+    };
+  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
