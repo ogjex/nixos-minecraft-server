@@ -155,7 +155,7 @@
         let
           modpack = (pkgs.fetchPackwizModpack {
             url = "https://github.com/Misterio77/Modpack/raw/0.2.9/pack.toml";
-            packHash = “sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=”;
+            packHash = "sha256-L5RiSktqtSQBDecVfGj1iDaXV+E90zrNEcf4jtsg+wk=";
           })
         in
           # Modpack example
