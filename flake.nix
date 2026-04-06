@@ -15,7 +15,7 @@
 	in {
 		nixosConfigurations.nixos-minecraft = lib.nixosSystem {
 			modules = [
-				inputs.nix-minecraft.nixosModules.nix-minecraft
+				#inputs.nix-minecraft.nixosModules.nix-minecraft
 				./configuration.nix
 				./hardware-configuration.nix
 				# other imports
