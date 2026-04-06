@@ -141,7 +141,7 @@
     eula = true;
     
     package = pkgs.minecraft-server-1-12;
-    dataDir = “/var/lib/minecraft-servers”;
+    dataDir = "/var/lib/minecraft-servers";
  
     servers = {
       cool-server1 = {
