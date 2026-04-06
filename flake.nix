@@ -13,7 +13,7 @@
 	    inherit (nixpkgs) lib;
 
 	in {
-		nixosConfigurations.default = lib.nixosSystem {
+		nixosConfigurations.nixos-minecraft = lib.nixosSystem {
 			modules = [
 				inputs.nix-minecraft.nixosModules.nix-minecraft
 				./configuration.nix
