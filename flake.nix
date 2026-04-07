@@ -9,15 +9,16 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, nix-minecraft, ... }@inputs: let
+	outputs = { nixpkgs ... } @ inputs: 
+	let
 	    inherit (nixpkgs) lib;
 
 	in {
-		nixosConfigurations.nixos-minecraft = lib.nixosSystem {
+		nixosConfigurations.nixos-minecraft = nixpkgs.lib.nixosSystem {
+			specialArgs = { };
 			modules = [
-				#inputs.nix-minecraft.nixosModules.nix-minecraft
+				inputs.nix-minecraft.nixosModules.nix-minecraft
 				./configuration.nix
-				./hardware-configuration.nix
 				# other imports
 			];
 		};
